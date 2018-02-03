@@ -1,0 +1,16 @@
+﻿<Window x:Class="PomDependencyAnalyzer.Views.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PomDependencyAnalyzer"
+        xmlns:Views="clr-namespace:PomDependencyAnalyzer.Views"
+        xmlns:ViewModels="clr-namespace:PomDependencyAnalyzer.ViewModels"
+        mc:Ignorable="d"
+        Title="Pom Analyzer" Height="350" Width="525">
+    <Window.DataContext>
+        <ViewModels:SinglePomAnalyzeViewModel/>
+    </Window.DataContext>
+
+    <Views:SinglePomAnalyzeView/>
+</Window>
