@@ -59,10 +59,17 @@
     <Compile Include="Models\SinglePomAnalyzer.cs" />
     <Compile Include="ViewModels\DelegateCommand.cs" />
     <Compile Include="ViewModels\ObservableObject.cs" />
-    <Compile Include="ViewModels\SinglePomAnalyzeViewModel.cs" />
+    <Compile Include="ViewModels\PomAnalyzeViewModel.cs" />
+    <Compile Include="Views\ComparePomView.xaml.cs">
+      <DependentUpon>ComparePomView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\SinglePomAnalyzeView.xaml.cs">
       <DependentUpon>SinglePomAnalyzeView.xaml</DependentUpon>
     </Compile>
+    <Page Include="Views\ComparePomView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -109,6 +116,9 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="testPom.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="testPomOutdated.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

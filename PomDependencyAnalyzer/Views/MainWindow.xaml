@@ -7,16 +7,18 @@
         xmlns:Views="clr-namespace:PomDependencyAnalyzer.Views"
         xmlns:ViewModels="clr-namespace:PomDependencyAnalyzer.ViewModels"
         mc:Ignorable="d"
-        Title="Pom Analyzer" Height="350" Width="525">
+        Title="Pom Analyzer" Height="600" Width="800">
     <Window.DataContext>
-        <ViewModels:SinglePomAnalyzeViewModel/>
+        <ViewModels:PomAnalyzeViewModel/>
     </Window.DataContext>
 
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
         </Grid.ColumnDefinitions>
         <Views:SinglePomAnalyzeView Grid.Column="0"/>
+        <Views:ComparePomView Grid.Column="1"/>
     </Grid>
     
 
