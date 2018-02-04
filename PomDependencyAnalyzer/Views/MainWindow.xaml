@@ -12,5 +12,12 @@
         <ViewModels:SinglePomAnalyzeViewModel/>
     </Window.DataContext>
 
-    <Views:SinglePomAnalyzeView/>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+        <Views:SinglePomAnalyzeView Grid.Column="0"/>
+    </Grid>
+    
+
 </Window>

@@ -8,19 +8,33 @@ namespace PomDependencyAnalyzer.Models.Objects
 {
     public class Dependency
     {
-        private string dependencyName;
+        private string dependencyGroupId;
+        private string dependencyArtifactId;
         private string dependencyVersion;
 
         public string DependencyName
         {
             get
             {
-                return dependencyName;
+                return dependencyGroupId;
             }
 
             set
             {
-                dependencyName = value;
+                dependencyGroupId = value;
+            }
+        }
+
+        public string DependencyArtifactId
+        {
+            get
+            {
+                return dependencyArtifactId;
+            }
+
+            set
+            {
+                dependencyArtifactId = value;
             }
         }
 
@@ -37,9 +51,12 @@ namespace PomDependencyAnalyzer.Models.Objects
             }
         }
 
-        public Dependency(string dependencyName, string dependencyVersion)
+        
+
+        public Dependency(string dependencyGroupId, string dependencyArtifactId, string dependencyVersion)
         {
-            this.dependencyName = dependencyName;
+            this.dependencyGroupId = dependencyGroupId;
+            this.dependencyArtifactId = dependencyArtifactId;
             this.dependencyVersion = dependencyVersion;
         }
     }
