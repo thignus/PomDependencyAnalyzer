@@ -27,6 +27,9 @@ namespace PomDependencyAnalyzer.Models
         private ObservableCollection<Dependency> dependencyDiffCollection = new ObservableCollection<Dependency>();
         private ObservableCollection<Dependency> compareDependencyDiffCollection = new ObservableCollection<Dependency>();
 
+        private string mainPom = "";
+        private string comparePom = "";
+
         public ObservableCollection<Dependency> DependencyCollection
         {
             get
@@ -68,6 +71,9 @@ namespace PomDependencyAnalyzer.Models
                 compareDependencyDiffCollection = value;
             }
         }
+
+        public string MainPom { get => mainPom; set => mainPom = value; }
+        public string ComparePom { get => comparePom; set => comparePom = value; }
 
         public void loadPomDependencies(string filePath)
         {

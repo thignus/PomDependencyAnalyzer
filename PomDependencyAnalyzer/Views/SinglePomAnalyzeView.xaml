@@ -28,7 +28,7 @@
             </Grid.ColumnDefinitions>
 
             <Button Grid.Column="0" x:Name="button" Command="{Binding LoadPomFile}" Content="Load Master Pom" Width="auto" Margin="5,5,2,5" VerticalAlignment="Center"/>
-            <TextBox Grid.Column="1" x:Name="textBox" Height="23" TextWrapping="NoWrap" Text="Pom Location" Margin="2" IsEnabled="False" VerticalAlignment="Center"/>
+            <TextBox Grid.Column="1" x:Name="textBox" Height="23" TextWrapping="NoWrap" Text="{Binding MainPom, Mode=OneWay}" Margin="2" IsEnabled="False" VerticalAlignment="Center"/>
             <CheckBox Grid.Column="2" x:Name="diffCheckbox" Content="Show Diff" HorizontalAlignment="Left" VerticalAlignment="Center" IsChecked="{Binding ShowDependencyCompare}"/>
         </Grid>
 

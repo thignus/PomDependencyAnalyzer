@@ -25,7 +25,7 @@
             </Grid.ColumnDefinitions>
 
             <Button Grid.Column="0" x:Name="button" Command="{Binding LoadComparePomFile}" Content="Load Compare Pom" Width="auto" Margin="5,5,2,5"/>
-            <TextBox Grid.Column="1" x:Name="textBox" Height="23" TextWrapping="NoWrap"  Text="Pom Location" Width="120" Margin="2" IsEnabled="False"/>
+            <TextBox Grid.Column="1" x:Name="textBox" Height="23" TextWrapping="NoWrap"  Text="{Binding ComparePom, Mode=OneWay}" Width="120" Margin="2" IsEnabled="False"/>
         </Grid>
 
 
