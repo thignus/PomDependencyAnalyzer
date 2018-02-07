@@ -19,13 +19,12 @@
 
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" x:Name="button" Command="{Binding LoadComparePomFile}" Content="Load Compare Pom" Width="auto" Margin="5,5,2,5"/>
-            <TextBox Grid.Column="1" x:Name="textBox" Height="23" TextWrapping="NoWrap"  Text="{Binding ComparePom, Mode=OneWay}" Width="120" Margin="2" IsEnabled="False"/>
+            <Button Grid.Column="0" x:Name="button" MinWidth="120" Command="{Binding LoadComparePomFile}" Content="Load Compare Pom" Width="auto" Margin="5,5,2,5"/>
+            <TextBox Grid.Column="1" x:Name="textBox" Height="23" MinWidth="100" TextWrapping="NoWrap"  Text="{Binding ComparePom, Mode=OneWay}" Margin="2" IsEnabled="False"/>
         </Grid>
 
 
