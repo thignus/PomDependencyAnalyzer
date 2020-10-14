@@ -3,6 +3,7 @@ using PomDependencyAnalyzer.Models;
 using PomDependencyAnalyzer.Models.Objects;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Windows;
 using System.Windows.Input;
 
@@ -45,6 +46,35 @@ namespace PomDependencyAnalyzer.ViewModels
             }
         }
 
+        public string MainPom
+        {
+            get
+            {
+                if (String.IsNullOrEmpty(singlePomAnalyzerModel.MainPom))
+                {
+                    return "Main Pom";
+                }
+                else
+                {
+                    return singlePomAnalyzerModel.MainPom;
+                }
+            }
+        }
+
+        public string ComparePom
+        {
+            get
+            {
+                if(String.IsNullOrEmpty(singlePomAnalyzerModel.ComparePom))
+                {
+                    return "Compare Pom";
+                }else
+                {
+                    return singlePomAnalyzerModel.ComparePom;
+                }
+            }
+        }
+
         public bool ShowDependencyCompare
         {
             get { return showCompareDiffs; }
@@ -77,7 +107,9 @@ namespace PomDependencyAnalyzer.ViewModels
                 try
                 {
                     singlePomAnalyzerModel.loadPomDependencies(pomSelectDialog.FileName);
+                    singlePomAnalyzerModel.MainPom = Directory.GetParent(pomSelectDialog.FileName).Name;
                     RaisePropertyChangedEvent("Dependencies");
+                    RaisePropertyChangedEvent("MainPom");
                 }
                 catch(Exception)
                 {
@@ -97,7 +129,9 @@ namespace PomDependencyAnalyzer.ViewModels
                 try
                 {
                     singlePomAnalyzerModel.loadComparePomDependencies(pomSelectDialog.FileName);
+                    singlePomAnalyzerModel.ComparePom = Directory.GetParent(pomSelectDialog.FileName).Name;
                     RaisePropertyChangedEvent("CompareDependencies");
+                    RaisePropertyChangedEvent("ComparePom");
                 }
                 catch (Exception)
                 {

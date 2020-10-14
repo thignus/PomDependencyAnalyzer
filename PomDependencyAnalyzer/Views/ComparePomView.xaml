@@ -19,9 +19,8 @@
 
         <Grid Grid.Row="0">
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
-                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="auto"/>
+                <ColumnDefinition Width="auto"/>
             </Grid.ColumnDefinitions>
 
             <Button Grid.Column="0" x:Name="button" Command="{Binding LoadComparePomFile}" Content="Load Compare Pom" Width="auto" Margin="5,5,10,5"/>
