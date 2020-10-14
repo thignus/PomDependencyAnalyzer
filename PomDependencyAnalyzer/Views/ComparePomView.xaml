@@ -24,8 +24,8 @@
                 <ColumnDefinition Width="*"/>
             </Grid.ColumnDefinitions>
 
-            <Button Grid.Column="0" x:Name="button" Command="{Binding LoadComparePomFile}" Content="Load Compare Pom" Width="auto" Margin="5,5,2,5"/>
-            <TextBox Grid.Column="1" x:Name="textBox" Height="23" TextWrapping="NoWrap"  Text="Pom Location" Width="120" Margin="2" IsEnabled="False"/>
+            <Button Grid.Column="0" x:Name="button" Command="{Binding LoadComparePomFile}" Content="Load Compare Pom" Width="auto" Margin="5,5,10,5"/>
+            <TextBox Grid.Column="1" x:Name="textBox" Height="23" TextWrapping="NoWrap"  Text="Pom Location" Margin="0,4,7,4" IsEnabled="False"/>
         </Grid>
 
 
