@@ -77,10 +77,6 @@ namespace PomDependencyAnalyzer.Models
 
         public void loadPomDependencies(string filePath)
         {
-            Console.WriteLine("Loading pom file");
-            //Dependency testDependency = new Dependency("testGroup", "testArtifact", "1.3.54");
-            //dependencyCollection.Add(testDependency);
-
             if (File.Exists(filePath))
             {
                 XmlDocument doc = new XmlDocument();
@@ -113,10 +109,6 @@ namespace PomDependencyAnalyzer.Models
 
         public void loadComparePomDependencies(string filePath)
         {
-            Console.WriteLine("Loading compare pom file");
-            //Dependency testDependency = new Dependency("testGroup", "testArtifact", "1.3.54");
-            //dependencyCollection.Add(testDependency);
-
             if (File.Exists(filePath))
             {
                 XmlDocument doc = new XmlDocument();
@@ -155,10 +147,8 @@ namespace PomDependencyAnalyzer.Models
                 XmlNamespaceManager manager = new XmlNamespaceManager(doc.NameTable);
                 manager.AddNamespace("mvn", "http://maven.apache.org/POM/4.0.0");
                 XmlNodeList dependencies = doc.SelectNodes("//mvn:dependency | //mvn:plugin", manager);
-                Console.WriteLine("Dependencies: " + dependencies.Count);
                 foreach (XmlNode dependencyNode in dependencies)
                 {
-                    //Console.WriteLine("Node: " + dependencyNode.InnerText);
                     string groupId, artifactId, version;
                     groupId = artifactId = version = "";
                     foreach (XmlNode dependency in dependencyNode.ChildNodes)
@@ -197,7 +187,6 @@ namespace PomDependencyAnalyzer.Models
                         {
                             if (d.DependencyArtifactId.Equals(c.DependencyArtifactId) && d.DependencyName.Equals(c.DependencyName) && !d.DependencyVersion.Equals(c.DependencyVersion))
                             {
-                                Console.WriteLine("Caught a difference");
                                 DependencyDiffCollection.Add(d);
                                 CompareDependencyDiffCollection.Add(c);
                             }
