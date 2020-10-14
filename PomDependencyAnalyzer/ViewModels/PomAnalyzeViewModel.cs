@@ -99,7 +99,7 @@ namespace PomDependencyAnalyzer.ViewModels
         private void LoadPom()
         {
             OpenFileDialog pomSelectDialog = new OpenFileDialog();
-            pomSelectDialog.Filter = "xml files (.xml)|*.xml";
+            pomSelectDialog.Filter = "xml files (.xml)|*.xml|All files (*.*)|*.*";
             pomSelectDialog.RestoreDirectory = true;
 
             if(pomSelectDialog.ShowDialog() == true)
@@ -121,7 +121,7 @@ namespace PomDependencyAnalyzer.ViewModels
         private void LoadComparePom()
         {
             OpenFileDialog pomSelectDialog = new OpenFileDialog();
-            pomSelectDialog.Filter = "xml files (.xml)|*.xml";
+            pomSelectDialog.Filter = "xml files (.xml)|*.xml|All files (*.*)|*.*";
             pomSelectDialog.RestoreDirectory = true;
 
             if (pomSelectDialog.ShowDialog() == true)
